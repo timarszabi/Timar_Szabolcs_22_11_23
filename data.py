@@ -1,0 +1,3 @@
+termekek=[]
+mennyiseg=[]
+egysegar=[]
