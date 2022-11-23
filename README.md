@@ -9,15 +9,16 @@ menü:
 -megvásárolandó termékek
 -mennyiség
 -hozzávetőleges ár
--boltok, amikbe megvárárolhatók
 
 2(termékek felvétele)
 -termék megnevezése
 -termék ára
 -szükséges mennyiség
--hol található a termék
 
-3(megvásárolt termékek törlése)
--megvásárolt termék megnevezése
+3(termékek törlése)
+termék megnevezése
 -törlés a bevásárolandó listáról
+
+4(végösszeg)
+-termékek mennyiségének és árának szorzata egyben
 
