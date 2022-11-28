@@ -10,9 +10,8 @@ while valasztas!='0':
     elif valasztas=='2':
         termeklista()
     elif valasztas=='3':
-        pass
+        termekhozzaadas()
     elif valasztas=='4':
-        pass
+        deleteTermek()
     elif valasztas=='5':
         pass
-    
