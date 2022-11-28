@@ -10,12 +10,13 @@ def menu():
     print
     system('cls')
     print('0 - Kilépés')
-    print('1 - Meglévő lista betöltése')
-    print('2 - Lista újrakezdése')
+    print('1 - Lista újrakezdése')
     print('2 - Bevásárlólista') 
     print('3 - Termék hozzáadása')
     print('4 - Termék törlése')
     print('5 - Lista nyomtatása')
+    return input('Kérem válasszon!:')
+    
 
 def listabetoltes():
     file=open('bevasarlo.csv','r',encoding='utf-8')
@@ -26,14 +27,16 @@ def listabetoltes():
         mennyiseg.append(int(darabolt[1]))
         egysegar.append(int(darabolt[2]))
     file.close()
+    input("Lista sikeresen betöltve, nyomjon egy Entert")
 
 
 
 def termeklista():
     system('cls')
     print('Termékek listája: ')
-    for termek in termekek:
-        print(f'\t{termek}')
+    for i in range(0,len(termekek)):
+        print(f'{termekek[i]} - {mennyiseg[i]} darab')
+    input("Tovább...")
         
 
 
