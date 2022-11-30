@@ -53,23 +53,27 @@ def deleteTermek():
     print('Termék törlése\n')
     print(f'\tTermékek listája: ')
     for i in range(0,len(termekek)):
-        print(f'{termekek[i]} - {mennyiseg[i]} darab')
-    termek=input('A törlendő termék megnevezése: ')
-    if termek in termekek:  
-        termekek.remove(termek) 
-        mentesFajlba()
-        input('Termék. Tovább...')
-    else:
-        input('Nincs ilyen termék. Tovább...')
+        print(f'{i+1}. {termekek[i]} - {mennyiseg[i]} darab')
+    termek=int(input('A törlendő termék sorszáma: '))
+    
+    termekek.pop(termek-1)
+    mennyiseg.pop(termek-1)
+    egysegar.pop(termek-1)
+    mentesFajlba()
+    input('Termék törölve a listáról. Tovább...')
+    
 
 
 def termekhozzaadas():
     system('cls')
     print('-------Új termék-------')
-    termek=input('Nevezze meg a terméket, amit a listáhot szeretne adni!: ')
-    mennyiseg=input('Adja meg a termék mennyiségét!: ')
-    egysegar=input('Adja meg a termék egységárát!:')
-    adatokmentese(termek,mennyiseg,egysegar)
+    bekerttermek=input('Nevezze meg a terméket, amit a listáhot szeretne adni!: ')
+    bekertmennyiseg=input('Adja meg a termék mennyiségét!: ')
+    bekertegysegar=input('Adja meg a termék egységárát!:')
+    termekek.append(bekerttermek)
+    mennyiseg.append(int(bekertmennyiseg))
+    egysegar.append(int(bekertegysegar))
+    adatokmentese(bekerttermek,bekertmennyiseg,bekertegysegar)
     input('Sikeres felvétel.Tovább..')
 
 def adatokmentese(termek,mennyiseg,egysegar):
@@ -82,7 +86,7 @@ def listatorles():
     f = open('bevasarlo.csv', 'r+')
     f.truncate(0)
     visszair()
-    input('A lista törölve')
+    input('A lista tartalma törölve.')
     
 
 def visszair():
@@ -90,3 +94,10 @@ def visszair():
     f.write("termekek;mennyiseg;egysegar")
     f.close()
 
+def vegosszeg():
+    vegosszeg=0
+    for i in range(len(egysegar)):
+        vegosszeg+=egysegar[i]*mennyiseg[i]
+    print(f'A listán szereplő termékek együttes összege {vegosszeg} ft.')
+    input('')
+    

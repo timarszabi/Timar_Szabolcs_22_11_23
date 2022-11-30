@@ -14,4 +14,4 @@ while valasztas!='0':
     elif valasztas=='4':
         deleteTermek()
     elif valasztas=='5':
-        pass
+        vegosszeg()
