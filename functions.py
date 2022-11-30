@@ -100,4 +100,13 @@ def vegosszeg():
         vegosszeg+=egysegar[i]*mennyiseg[i]
     print(f'A listán szereplő termékek együttes összege {vegosszeg} ft.')
     input('')
+
+def Legvegso():
+    system('cls')
+    print('Termékek listája: ')
+    for i in range(0,len(termekek)):
+        print(f'\t{termekek[i]} - {mennyiseg[i]} darab')
+    vegosszeg()
+    input('')
     
+
