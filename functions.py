@@ -54,13 +54,13 @@ def deleteTermek():
     print(f'\tTermékek listája: ')
     for i in range(0,len(termekek)):
         print(f'{i+1}. {termekek[i]} - {mennyiseg[i]} darab')
-    termek=int(input('A törlendő termék sorszáma: '))
+    termek=int(input('Válassza ki a törölni kívánt termék sorszámát: '))
     
     termekek.pop(termek-1)
     mennyiseg.pop(termek-1)
     egysegar.pop(termek-1)
     mentesFajlba()
-    input('Termék törölve a listáról. Tovább...')
+    input('Termék törölve a listáról. \nTovább...')
     
 
 
@@ -74,7 +74,7 @@ def termekhozzaadas():
     mennyiseg.append(int(bekertmennyiseg))
     egysegar.append(int(bekertegysegar))
     adatokmentese(bekerttermek,bekertmennyiseg,bekertegysegar)
-    input('Sikeres felvétel.Tovább..')
+    input('Sikeres felvétel. \nTovább..')
 
 def adatokmentese(termek,mennyiseg,egysegar):
     file=open(filename, 'a', encoding='utf-8')
@@ -83,12 +83,14 @@ def adatokmentese(termek,mennyiseg,egysegar):
 
 
 def listatorles():
-    f = open('bevasarlo.csv', 'r+')
+    f = open('bevasarlo.csv', 'w')
     f.truncate(0)
     visszair()
+    termekek.clear()
+    mennyiseg.clear()
+    egysegar.clear()
     input('A lista tartalma törölve.')
     
-
 def visszair():
     f = open("bevasarlo.csv", "a")
     f.write("termekek;mennyiseg;egysegar")
